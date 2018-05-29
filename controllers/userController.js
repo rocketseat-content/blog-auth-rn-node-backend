@@ -36,7 +36,7 @@ router.post("/authenticate", async (req, res) => {
 
     return res.json({
       user,
-      token: User.generateToken(user)
+      token: user.generateToken()
     });
   } catch (err) {
     return res.status(400).json({ error: "User authentication failed" });
